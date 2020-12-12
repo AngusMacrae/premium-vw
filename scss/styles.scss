@@ -1,0 +1,82 @@
+@import 'variables';
+@import 'overrides';
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.navbar {
+  border-bottom: solid $vw-blue 1px;
+  background-color: rgba(255, 255, 255, 0.75);
+
+  .nav-link {
+    color: black !important;
+    padding: 0 1em !important;
+  }
+}
+
+.btn-outline-dark {
+  color: white;
+}
+
+.navbar-brand {
+  font-family: 'Noto Serif', serif;
+  font-weight: bold;
+}
+
+.vw-icon {
+  height: auto;
+  width: 1.6rem;
+}
+
+#hero-container {
+  flex: 100vh 1 0;
+  background-image: url('/assets/img/e-golf-hero.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#cta-container {
+  margin-top: 55vh;
+}
+
+#cta {
+  border-left: solid $vw-blue 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  max-width: max-content;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+section {
+  margin-top: 2em;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.feature-highlight-title {
+  font-size: 1rem;
+  font-weight: bold;
+  // border-bottom: solid $vw-blue 2px;
+}
+
+.gallery-img-container img {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#footer-social-links a {
+  width: 2em;
+  height: 2em;
+}
