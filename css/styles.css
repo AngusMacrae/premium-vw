@@ -81,9 +81,9 @@ body {
 }
 
 #hero-container {
-  -webkit-box-flex: 100vh;
-      -ms-flex: 100vh 1 0px;
-          flex: 100vh 1 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100vh;
+          flex: 1 0 100vh;
   background-image: url("/assets/img/e-golf-hero.jpg");
   background-size: cover;
   background-attachment: fixed;
