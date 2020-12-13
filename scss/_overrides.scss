@@ -3,3 +3,20 @@ input,
 select {
   border-radius: 0 !important;
 }
+
+a {
+  color: $vw-blue-lightened !important;
+}
+
+.btn-primary {
+  background-color: $vw-blue-lightened !important;
+  border-color: $vw-blue-lightened !important;
+
+  &:hover {
+    background-color: $vw-blue-highlight !important;
+  }
+}
+
+.bg-light {
+  background-color: $bg-light !important;
+}
