@@ -104,6 +104,10 @@ section {
   display: none;
 }
 
+#similar-vehicles img {
+  width: 200px;
+}
+
 #footer-nav a:hover {
   text-decoration: underline;
 }
@@ -111,6 +115,12 @@ section {
 #footer-social-links a {
   width: 2em;
   height: 2em;
+}
+
+@media (min-width: 576px) {
+  #similar-vehicles img {
+    width: 150px;
+  }
 }
 
 @media (min-width: 768px) {
