@@ -42,7 +42,7 @@ body {
   }
 }
 
-.btn-outline-dark {
+.btn-outline-dark:not(#back-to-top-btn) {
   color: white;
 }
 

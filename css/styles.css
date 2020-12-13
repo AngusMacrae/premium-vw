@@ -1,10 +1,11 @@
 button,
 input,
-select {
+select,
+.btn {
   border-radius: 0 !important;
 }
 
-a {
+main a:not(#back-to-top-btn) {
   color: #0043b8 !important;
 }
 
@@ -65,7 +66,7 @@ body {
   height: 100%;
 }
 
-.btn-outline-dark {
+.btn-outline-dark:not(#back-to-top-btn) {
   color: white;
 }
 

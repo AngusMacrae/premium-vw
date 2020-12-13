@@ -1,10 +1,11 @@
 button,
 input,
-select {
+select,
+.btn {
   border-radius: 0 !important;
 }
 
-a {
+main a:not(#back-to-top-btn) {
   color: $vw-blue-lightened !important;
 }
 
