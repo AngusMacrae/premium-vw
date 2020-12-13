@@ -1,6 +1,5 @@
 const galleryFilterSelect = document.getElementById("gallery-filter-select");
 const galleryImageContainers = document.querySelectorAll(".gallery-img-container");
-const galleryImages = document.querySelectorAll(".gallery-img-container img");
 
 galleryFilterSelect.addEventListener("change", function () {
   const filter = this.value;
@@ -12,7 +11,3 @@ galleryFilterSelect.addEventListener("change", function () {
     }
   });
 });
-
-galleryImages.forEach(image => image.addEventListener("click", function() {
-  window.open(image.src, '_blank');
-}));
