@@ -117,6 +117,15 @@ section {
   font-size: 1.4rem;
 }
 
+.section-title::before {
+  display: block;
+  content: ' ';
+  margin-top: -4rem;
+  height: 4rem;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .feature-highlight-title {
   font-size: 1rem;
   font-weight: bold;

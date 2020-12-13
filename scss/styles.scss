@@ -88,6 +88,16 @@ section {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.4rem;
+
+  // this block is necessary to offset the fixed navbar height for anchor link navigation within the page
+  &::before {
+    display: block;
+    content: ' ';
+    margin-top: -4rem;
+    height: 4rem;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .feature-highlight-title {
