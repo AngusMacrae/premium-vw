@@ -1,8 +1,35 @@
 @import 'variables';
-@import 'overrides';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Fira Sans', sans-serif;
+}
+
+button,
+input,
+select,
+.btn {
+  border-radius: 0 !important;
+}
+
+main a:not(#back-to-top-btn) {
+  color: $vw-blue-lightened !important;
+}
+
+.btn-primary {
+  background-color: $vw-blue-lightened !important;
+  border-color: $vw-blue-lightened !important;
+
+  &:hover {
+    background-color: $vw-blue-highlight !important;
+  }
+}
+
+.bg-light {
+  background-color: $bg-light !important;
 }
 
 .navbar {
@@ -11,7 +38,6 @@ body {
 
   .nav-link {
     color: black !important;
-    padding: 0 1em !important;
     position: relative;
     transition: color 0.2s;
 
@@ -42,17 +68,12 @@ body {
   }
 }
 
-.btn-outline-dark:not(#back-to-top-btn) {
-  color: white;
-}
-
 .navbar-brand {
   font-family: 'Noto Serif', serif;
   font-weight: bold;
-  color: inherit !important;
 }
 
-.vw-icon {
+.navbar-vw-icon {
   height: auto;
   width: 1.6rem;
 }
@@ -80,34 +101,30 @@ body {
   white-space: nowrap;
 }
 
+.btn-outline-dark:not(#back-to-top-btn) {
+  color: white;
+}
+
 section {
-  margin-top: 2em;
+  margin-top: 3.5em;
 }
 
-.section-title {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.4rem;
-
-  // this block is necessary to offset the fixed navbar height for anchor link navigation within the page
-  &::before {
-    display: block;
-    content: ' ';
-    margin-top: -4rem;
-    height: 4rem;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-
-.feature-highlight-title {
-  font-size: 1rem;
-  font-weight: bold;
-  // border-bottom: solid $vw-blue 2px;
+// this block is necessary to offset the fixed navbar height for anchor link navigation within the page
+.section-title::before {
+  display: block;
+  content: ' ';
+  margin-top: -4rem;
+  height: 4rem;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .gallery-img-container img {
-  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .hidden {
@@ -118,13 +135,17 @@ section {
   width: 200px;
 }
 
+#back-to-top-container {
+  margin-bottom: 3.5em;
+}
+
 #footer-nav a:hover {
   text-decoration: underline;
 }
 
 #footer-social-links a {
   width: 2em;
-  height: 2em;
+  height: auto;
 }
 
 @media (min-width: 576px) {
@@ -136,14 +157,5 @@ section {
 @media (min-width: 768px) {
   #cta-container {
     margin-top: 50vh;
-  }
-}
-
-@media (max-width: 991px) {
-  .navbar .nav-link {
-    text-align: center;
-    font-size: 1.25rem;
-    padding-top: 0.3em !important;
-    padding-bottom: 0.3em !important;
   }
 }
