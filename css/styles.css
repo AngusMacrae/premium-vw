@@ -135,6 +135,10 @@ section {
           transform: scale(1.02);
 }
 
+.gallery-img-anchor {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -156,6 +160,39 @@ section {
   height: auto;
 }
 
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1040;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#lightbox {
+  position: relative;
+}
+
+#lightbox-close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#lightbox-img {
+  max-width: 95vw;
+}
+
 @media (min-width: 576px) {
   #similar-vehicles img {
     width: 150px;
@@ -165,5 +202,8 @@ section {
 @media (min-width: 768px) {
   #cta-container {
     margin-top: 50vh;
+  }
+  #lightbox-img {
+    max-width: 70vw;
   }
 }
