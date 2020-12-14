@@ -135,6 +135,14 @@ section {
   display: none;
 }
 
+.similar-vehicle-item {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bg-light;
+  }
+}
+
 #similar-vehicles img {
   width: 200px;
 }
