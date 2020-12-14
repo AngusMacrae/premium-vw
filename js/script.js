@@ -11,3 +11,5 @@ galleryFilterSelect.addEventListener("change", function () {
     }
   });
 });
+
+AOS.init();
