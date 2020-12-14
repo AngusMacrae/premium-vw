@@ -15,14 +15,19 @@ galleryFilterSelect.addEventListener("change", function () {
 (function replaceAnchorsWithClickableDivs() {
   const lightboxOverlay = document.getElementById("lightbox-overlay");
   const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCloseBtn = document.getElementById("lightbox-close-btn");
+  let lastOpenedImg = null;
 
-  function openLightbox(url) {
-    lightboxImg.src = url;
+  function openLightbox(anchor) {
+    lightboxImg.src = anchor.querySelector("img").src;
     lightboxOverlay.hidden = false;
+    lastOpenedImg = anchor;
+    lightboxCloseBtn.focus();
   }
   
   function closeLightbox() {
     lightboxOverlay.hidden = true;
+    lastOpenedImg.focus();
   }
 
   let galleryImageAnchors = document.querySelectorAll(".gallery-img-anchor")
@@ -31,7 +36,7 @@ galleryFilterSelect.addEventListener("change", function () {
   for (let i = len - 1; i > -1; i--) {
     let temp = galleryImageAnchors[i];
     let newList = temp.outerHTML;
-    newList = newList.replace('<a ','<div ');
+    newList = newList.replace('<a ','<div tabindex="0"');
     newList = newList.replace('</a>','</div>');
     temp.outerHTML = newList;
   }
@@ -40,11 +45,22 @@ galleryFilterSelect.addEventListener("change", function () {
 
   galleryImageAnchors.forEach((node) => {
     node.addEventListener("click", function () {
-      openLightbox(this.querySelector("img").src);
-    })
+      openLightbox(this);
+    });
+    node.addEventListener("keydown", function(event) {
+       if (event.keyCode === 13) {
+          event.preventDefault();
+          node.click();
+       }
+    });
   });
 
   lightboxOverlay.addEventListener("click", closeLightbox);
+  lightboxOverlay.addEventListener("keydown", (event) => {
+    if (event.keyCode === 27) {
+      closeLightbox();
+    }
+  });
 })();
 
 AOS.init();
